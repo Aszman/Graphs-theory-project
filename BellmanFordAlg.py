@@ -31,7 +31,7 @@ class Algorithm:
 
         self.result[self.start_node] = (0, -1)
 
-    #Calcule wages and paths to all nodes
+    #Calculate wages and paths to all nodes
     def relax(self):
         for _ in range(len(self.nodes)-1):
             changed = False
