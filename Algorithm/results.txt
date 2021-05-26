@@ -1,0 +1,4 @@
+Start node: S
+End node: D
+Wage: 9
+Way to this node: S -> E -> D
