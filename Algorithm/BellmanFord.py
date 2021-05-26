@@ -33,7 +33,7 @@ class Algorithm:
 
         self.result[self.start_node] = (0, -1)
 
-    # Calculate wages and paths to all nodes
+    # Calculate weights and paths to all nodes
     def relax(self):
         for _ in range(len(self.nodes) - 1):
             changed = False
@@ -53,7 +53,7 @@ class Algorithm:
 
     # Print results
     # if end_node is not equal any node, print overall result
-    # otherwise, print wage and path to this node
+    # otherwise, print weight and path to this node
     def print(self):
         resultFile = open("results.txt", 'w')
 
@@ -61,7 +61,7 @@ class Algorithm:
             if self.end_node in self.nodes:
                 text = "Start node: " + str(self.start_node) + "\n"
                 text += "End node: " + str(self.end_node) + "\n"
-                text += "Wage: " + str(self.result[self.end_node][0])
+                text += "Weight: " + str(self.result[self.end_node][0])
 
                 print(text)
                 resultFile.write(text+"\n")
@@ -78,11 +78,11 @@ class Algorithm:
                 resultFile.write(text)
 
             else:
-                print("End node: wage, predecessor ")
-                resultFile.write("End node: wage, predecessor\n")
+                print("End node: weight, predecessor ")
+                resultFile.write("End node: weight, predecessor\n")
 
-                for node, (wage, predecessor) in sorted(self.result.items()):
-                    text = str(node) + ": " + str(wage) + ", " + str(predecessor)
+                for node, (weight, predecessor) in sorted(self.result.items()):
+                    text = str(node) + ": " + str(weight) + ", " + str(predecessor)
                     print(text)
                     resultFile.write(text+"\n")
 
