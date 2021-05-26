@@ -82,7 +82,10 @@ class Algorithm:
                 resultFile.write("End node: weight, predecessor\n")
 
                 for node, (weight, predecessor) in sorted(self.result.items()):
-                    text = str(node) + ": " + str(weight) + ", " + str(predecessor)
+                    if self.start_node == node:
+                        text = str(node) + ": " + str(weight) + ", " + "START"
+                    else:
+                        text = str(node) + ": " + str(weight) + ", " + str(predecessor)
                     print(text)
                     resultFile.write(text+"\n")
 
