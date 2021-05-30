@@ -92,6 +92,7 @@ class Algorithm:
         else:
             print("Graph has negative cycle, can't use Bellman-Ford algorithm correctly")
             resultFile.write("Graph has negative cycle, can't use Bellman-Ford algorithm correctly")
+        resultFile.close()
 
 alg = Algorithm("data.json")
 
